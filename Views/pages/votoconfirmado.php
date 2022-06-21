@@ -9,9 +9,9 @@
 	<img class="bd-placeholder-img rounded-circle" width="150" height="150" src="<?= base_url() ?>dist/img/<?=$candidato['imagem']?>" role="img" aria-label="Nome do candidato" preserveAspectRatio="xMidYMid slice" focusable="false"><title><?=$candidato['nome']?></title><rect width="100%" height="100%" fill="#777"/></svg>
   </form>
   <hr />
-  <p style="margin-top:10px;"><a class="btn btn-primary btn-lg" href="../voto">clique aqui para fechar esta tela e ocultar seu voto.</a></p>
+  <p style="margin-top:10px;"><a class="btn btn-danger btn-lg" href="../../home">clique aqui para fechar esta tela e ocultar seu voto.</a></p>
+  <p>Seu código de acesso: <?=$codigo?></p>
 </main>
-
 
 
   </body>

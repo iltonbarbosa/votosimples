@@ -14,7 +14,7 @@
 					<img class="bd-placeholder-img rounded-circle" width="150" height="150" src="<?= base_url() ?>dist/img/<?=$cand['imagem']?>" role="img" aria-label="Nome do candidato" preserveAspectRatio="xMidYMid slice" focusable="false"><title><?=$cand['nome']?></title><rect width="100%" height="100%" fill="#777"/></svg>
 
 					<h3 class="fw-normal"><?=$cand['nome']?></h3>
-					<p><a class="btn btn-primary" href="votoconfirmado/<?=$cand['candidatoid']?>" onclick="return confirm('Confirma o seu voto neste(a) candidato(a)?')">
+					<p><a class="btn btn-primary" href="votoconfirmado/<?=$cand['candidatoid']."/".$codigo?>" onclick="return confirm('Confirma o seu voto neste(a) candidato(a)?')">
 							Clique aqui para votar<br/> neste(a) candidato(a)
 						</a></p>
 					<p><?=$cand['descricao']?></p>
@@ -27,7 +27,7 @@
 		<!-- START THE FEATURETTES -->
 
 		<hr class="featurette-divider">
-
+		<p>Seu código de acesso: <?=$codigo?></p>
 		<!-- /END THE FEATURETTES -->
 
   </div><!-- /.container -->
