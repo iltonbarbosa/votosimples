@@ -10,7 +10,7 @@ class VotoModel extends Model{
 
 
 	public function totalVotos(){
-		$query = $this->query("SELECT candidatoid, nome, descricao, imagem, count(candidatoid) as 'totalvotos' FROM voto join candidato using(candidatoid) group by candidatoid");
+		$query = $this->query("SELECT candidatoid, nome, descricao, imagem, count(voto.candidatoid) as 'totalvotos' FROM candidato left join voto using(candidatoid) group by candidatoid");
 
 		return $query->getResult('array');
 	}
