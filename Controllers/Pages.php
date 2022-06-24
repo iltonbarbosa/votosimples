@@ -72,15 +72,17 @@ class Pages extends BaseController{
 		$nums = implode('', range(0, 9)); // 0123456789
 
 		$alphaNumeric = $upper.$lower.$nums; // ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-		$codigo = '';
+
 		$len = 7; // numero de chars
 
-		//for($i=0;$i<=150;$i++){
-			for($i = 0; $i < $len; $i++) {
+		for($i=0;$i<=250;$i++){
+			$codigo = '';
+			for($c = 0; $c < $len; $c++) {
 				$codigo .= $alphaNumeric[rand(0, strlen($alphaNumeric) - 1)];
 			}
-			//$this->codigoModel->save(['codigovoto' => $codigo]);
-		//}
+
+			$this->codigoModel->save(['codigovoto' => $codigo]);
+		}
 	}
 
 	private function listaCandidatos(){
