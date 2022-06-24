@@ -8,4 +8,16 @@ class VotoModel extends Model{
 	protected $allowedFields = ['candidatoid'];
 	protected $primaryKey = 'votoid';
 
+
+	public function totalVotos(){
+		$query = $this->query("SELECT candidatoid, nome, descricao, imagem, count(candidatoid) as 'totalvotos' FROM voto join candidato using(candidatoid) group by candidatoid");
+
+		return $query->getResult('array');
+	}
+
+	public function totalGeralVotos(){
+		$query = $this->query("SELECT count(candidatoid) as 'totalgeral' FROM voto");
+
+		return $query->getRow();
+	}
 }
